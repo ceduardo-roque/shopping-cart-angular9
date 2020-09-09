@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 
 import { products } from '../products';
 
+// add cart service
+import { CartService } from '../cart.service';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -17,6 +20,19 @@ export class ProductListComponent {
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
   }
+
+  
+  // serviço
+  addToCart(product) {
+    window.alert('Produto adicionado ao Carrinho!');
+    this.cartService.addToCart(product);
+  }
+
+  // construtor
+  constructor(
+    private cartService: CartService
+  ) { }
+
 }
 
 

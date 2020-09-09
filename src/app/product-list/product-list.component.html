@@ -1,26 +1,30 @@
-<h2>Products</h2>
-<!-- *ngFor -->
-<div *ngFor="let product of products; index as productId">
+<h2>Livros para Venda</h2>
 
-  <h3>
-    <!-- Property binding [ ] -->
-    <!-- router link -->
-    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
-      <!-- Interpolation {{ }} -->
-      {{ product.name }}
-    </a>
-  </h3>
+<div class="shipping-item-column" *ngFor="let product of products; index as productId">
+    
 
-  <!-- *ngIf -->
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
+    <div class="card">
+      <img src="{{product.img}}" alt="{{product.name}}" style="width:100%">
+      <h2>  <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+        {{ product.name }}
+      </a></h2>
+      <p class="price">{{product.price | currency}}</p>
+      <p>{{product.description}}</p>
+      <p>
+        
+        <button (click)="addToCart(product)">
+        Adicionar ao carrinho
+      </button></p>
+    </div> 
 
-  <!-- Event binding ( ) -->
+
+
+
+  <!-- Event binding ( ) 
    <button (click)="share()">
     Share
   </button>
-
+  -->
   <app-product-alerts
     [product]="product"
     (notify)="onNotify()">

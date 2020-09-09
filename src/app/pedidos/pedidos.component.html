@@ -1,0 +1,34 @@
+<div *ngIf="compras.length > 0 else loading">
+
+  <div class="shipping-item" *ngFor="let compra of compras " style="display: flex; width: 500px;">
+    <div style="width: 30%;">
+      <table style="width: 1000px;  border: thin single black collapse ">
+        <tr>
+          <th style="width: 1000px; text-align: left;">Nome do Cliente</th>
+          <th style="width: 1000px; text-align: left;">Endereço do Cliente</th>
+        </tr>
+        <tr>
+          <td style="width: 1000px; text-align: left;">{{ compra.name }}</td>
+          <td style="width: 1000px; text-align: left;">{{ compra.address  }}</td>
+        </tr>
+      </table>
+      <div class="shipping-item" *ngFor="let produto of compra.produtos ">
+
+        <table style="width: 1000px;">
+          <tr>
+            <th style="width: 1000px; text-align: left;">Nome do Produto</th>
+            <th style="width: 1000px; text-align: left;">Preço do Produto</th>
+          </tr>
+          <tr>
+            <td style="width: 1000px; text-align: left;">{{ produto.name }}</td>
+            <td style="width: 1000px; text-align: left;">{{ produto.price | currency}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div>Não foram encontrados pedidos ainda...</div>
+</ng-template>

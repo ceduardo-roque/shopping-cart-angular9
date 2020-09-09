@@ -1,18 +1,21 @@
 export const products = [
   {
-    name: 'Phone XL',
-    price: 799,
-    description: 'A large phone with one of the best screens'
+    name: 'Java: Como programar',
+    price: 309.00,
+    description: 'Aprenda a programar Java com os mestres!', 
+    img: '../../assets/imgs/java_deitel.jpg'
   },
   {
-    name: 'Phone Mini',
-    price: 699,
-    description: 'A great phone with one of the best cameras'
+    name: 'Pro Angular 6',
+    price: 109.99,
+    description: 'Um bom livro de Angular!',
+    img: '../../assets/imgs/angular.jpg'
   },
   {
-    name: 'Phone Standard',
-    price: 299,
-    description: ''
+    name: 'Node.js - Simplifique sua vida com o Node!',
+    price: 199,
+    description: 'Um ótimo livro para quem está começando a usar Node.',
+    img: '../../assets/imgs/node.jpg'
   }
 ];
 
